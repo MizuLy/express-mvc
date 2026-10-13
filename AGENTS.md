@@ -15,6 +15,18 @@ Express 5 + Prisma (PostgreSQL) backend scaffold. CommonJS, Node >= 18.
 - `npm test` — NOT configured; it is a stub that exits 1 (no test framework installed). Don't run or assume tests exist.
 - No linter, formatter, or typecheck is configured. `src/` is plain CommonJS JS (`"type": "commonjs"`; use `require()`/`module.exports`, not ESM imports).
 
+## Git workflow
+
+- Keep commits focused and use short, imperative subjects, such as `docs: clarify Express MVC structure`.
+- Before pushing, check `git status`, commit local work, and synchronize with the remote using `git pull --rebase origin main`.
+- Resolve conflicts locally, run the relevant checks, and then use `git push origin main`. Do not force-push shared history.
+
+## Documentation
+
+- Treat `README.md` as the public explanation of this repository's reusable folder structure and setup.
+- Update `README.md` when adding or renaming layers, commands, dependencies, or environment variables.
+- Keep `AGENTS.md` focused on contributor and automation guidance; do not claim a layer is implemented until its files and behavior exist.
+
 ## Prisma
 
 - Requires `DATABASE_URL` in `.env` (copy from `.env.example`). `prisma.config.ts` runs `dotenv/config` and hardcodes `engine: "classic"`, schema at `prisma/schema.prisma`, migrations at `prisma/migrations/`. Use the `npx prisma ...` CLI.
